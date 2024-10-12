@@ -1,0 +1,413 @@
+
+Celsius_to_Farenheit
+{
+  #include <stdio.h>
+main()
+{
+    float centigrades;
+    float farenheit;
+    centigrades = 50;
+    farenheit = ((9*centigrades)/5)+ 32;
+
+    printf("The temperature %f celcius", centigrades);
+    printf("equals %f farenheit", farenheit);
+}  
+}
+
+Check_divisibility_by6
+{
+#include <stdio.h>
+main() {
+    int a;
+    scanf("%d", &a);
+    if ((a%6) == 0)
+    {
+        printf("input %d is divisible by 6", a);
+    }else {
+        printf("input %d is not divisible by 6",a);
+    }
+
+}
+}
+
+Divisibility_by_four
+{
+   #include <stdio.h>
+main() {
+    int a;
+    scanf("%d", &a);
+    if ((a%6) == 0){
+        if ((a%4) == 0){
+            printf("%d is divisible by 6 & 4\n",a);
+        }
+    }
+
+} 
+
+#include <stdio.h>
+main() {
+    int a;
+    scanf("%d", &a);
+    if (((a%6) == 0) && ((a%4) == 0)) {
+         printf ("%d is divisible by 6 & 4\n",a);
+    }
+}
+}
+
+leap_year
+{
+#include <stdio.h>
+ main() {
+    int year;
+    if (((year%4) == 0)
+        && ((!((year%100) == 0))
+        || ((year % 400)== 0))) {
+            printf ("year %d is a leap year", year);
+        }
+ }
+}
+
+matrix_multiplication
+{
+    #include <stdio.h> 
+#include <stdlib.h> 
+void read(int a[][100],int m,int n) 
+{ 
+int i,j; 
+printf("enter the elements row by row\n"); 
+for(i=0;i<m;i++) 
+for(j=0;j<n;j++) 
+scanf("%d",&a[i][j]); 
+} 
+void display(int a[][100],int m,int n) 
+{ 
+int i,j; 
+for(i=0;i<m;i++) 
+{ 
+for(j=0;j<n;j++) 
+printf("%5d",a[i][j]); 
+printf("\n"); 
+} 
+} 
+void sum(int a[][100],int b[][100],int m,int n) 
+{ 
+int i,j,c[100][100]; 
+for(i=0;i<m;i++) 
+for(j=0;j<n;j++) 
+c[i][j]=a[i][j]+b[i][j]; 
+printf("Sum of matrix...\n"); 
+display(c,m,n); 
+} 
+void transpose(int a[][100],int m,int n) 
+{ 
+int i,j,c[100][100]; 
+for(i=0;i<m;i++) 
+for(j=0;j<n;j++) 
+c[j][i]=a[i][j]; 
+display(c,n,m); 
+} 
+void product(int a[][100],int b[][100],int m1,int n1,int n2) 
+{ 
+int c[100][100],i,j,k; 
+for (i = 0; i < m1; i++) { 
+for (j = 0; j < n2; j++) { 
+    c[i][j] = 0; 
+for (k = 0; k < n1; k++) 
+c[i][j] += a[i][k] * b[k][j]; 
+} 
+} 
+printf("Product of matrix...\n"); 
+display(c,m1,n2); 
+} 
+int main() 
+{ int a[100][100],b[100][100],m1,n1,m2,n2,choice;  
+printf("Enter the size of the matrix A row,column\n"); 
+scanf("%d%d",&m1,&n1); 
+printf("Enter Matrix A\n"); 
+read(a,m1,n1); 
+printf("Enter the size of the matrix B row,column\n"); 
+scanf("%d%d",&m2,&n2); 
+printf("Enter Matrix B\n"); 
+read(b,m2,n2); 
+printf("Matrix A..\n"); 
+display(a,m1,n1); 
+printf("Matrix B..\n"); 
+display(b,m2,n2); 
+while(1) 
+{ 
+printf("\n************************************\n");
+printf("1.add 2.multiply 3.transpose 4.exit \n"); 
+printf("Enter the option.....:"); 
+scanf("%d",&choice); 
+switch(choice) 
+{ 
+case 1: if(m1==m2 && n1==n2) 
+sum(a,b,m1,n1); 
+else 
+printf("Incompatable matrix...cannot add..\n"); 
+break; 
+case 2: if(n1==m2) 
+product(a,b,m1,n1,n2);  
+else 
+printf("Incompatable matrix...cannot mutliply..\n"); 
+break; 
+case 3: printf("Transpose of A..\n"); 
+transpose(a,m1,n1); 
+printf("Transpose of B..\n"); 
+transpose(b,m2,n2); 
+break; 
+case 4: exit(0); 
+break;
+} 
+} 
+}
+}
+
+sort
+{
+    #include <stdio.h>
+main() {
+    int first_number;
+    int second_number;
+    int length;
+    int maxlen;
+    maxlen =1;
+    length = 1;
+    scanf ("%d", &first_number);
+    if (first_number != -1) { 
+        do {
+            scanf ("%d", &second_number);
+            if (first_number < second_number) {
+                length = length + 1;
+            } else {
+                if (maxlen < length){
+                    maxlen = length;
+                }
+                length = 1;
+            }
+            first_number = second_number;
+        } while (second_number != -1);
+    }
+    if (maxlen < length)  {
+        maxlen = length;
+    }    
+    printf("%d",maxlen) ;
+}
+}
+
+swap_and_sum
+{
+    #include<stdio.h>
+#include<stdlib.h>
+
+void swap(int* x,int* y);
+int sum(int* x,int* y);
+void main(){
+    int choice,a,b,c,d,s=0;
+    printf("\033[0;31m*************************************\033[0m\n");
+    while(1){
+    printf("What do you want to do today dumbass?\n");
+    printf("\t1. Find Sum of two \033[0;33mfucking\033[0m numbers. \n\t2. Swap two useless numbers.\n\t3. Nah!I\'m fine doing nothing\n");
+    scanf("%d",&choice);
+    switch (choice)
+    {
+    case 1:
+        printf("\n************************************\n");
+        printf("\nEnter two numbers to find sum you sonoffabit**h!\n");
+        scanf("%d%d", &a,&b);
+        s= sum(&a,&b);
+        printf("\nHere is that disgusting sum you want: %d\n",s);
+        printf("\n**************************************\n");
+        break;
+    case 2:
+        printf("\nEnter two values to a and b loser\n");
+        scanf("%d%d", &c,&d);
+        printf("The value you entered : a=%d,b=%d\n",c,d);
+        swap(&c,&d);
+        printf("Here moron, I swapped the values for you\n");
+        printf("\nnew a= %d, new b =%d\n",c,d);
+        printf("\n*******************************************\n");
+        break;
+    case 3: 
+        printf("\tFine. Now get the fuck out of here!");
+        exit(0);
+        break;
+    }
+    }
+}
+int sum(int* x,int* y){
+    int s;
+    return s= *x + *y;
+}
+void swap (int*x, int*y){
+    int temp;
+    temp = *x;
+    *x = *y;
+    *y = temp;
+}
+}
+
+file
+{
+    #include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+  
+  FILE *allNumbersFile;
+  FILE *oddNumbersFile;
+  FILE *evenNumbersFile;
+
+  
+  allNumbersFile = fopen("all_numbers.txt", "w");
+  oddNumbersFile = fopen("odd_numbers.txt", "w");
+  evenNumbersFile = fopen("even_numbers.txt", "w");
+
+ 
+  int number;
+  while (1) 
+  	{
+	  	printf("Enter a number:");
+	  	scanf("%d", &number);    
+	    if (number % 2 == 0) 
+            {
+	      		fprintf(evenNumbersFile, "%d\n", number);
+	    	}	
+	    else 
+            {
+	      		fprintf(oddNumbersFile, "%d\n", number);
+	   	    }
+  	}
+
+  
+  fclose(allNumbersFile);
+  fclose(oddNumbersFile);
+  fclose(evenNumbersFile);
+
+  return 0;
+}
+
+}
+
+factorial
+{
+    #include <stdio.h>
+
+int find_factorial(int k) {
+    int n;
+    int ans = 1;
+    for (n=0; n<k; n=n+1) {
+        ans = ans*(n+1);
+    }
+    return ans;
+}
+int main(){
+    int n,k;
+    scanf("%d",&n);
+
+    for(int i=0;i<n;i++){
+        scanf("%d",&k);
+        printf("%d ", find_factorial(k));
+    }
+    
+    return 0;
+}
+}
+
+is_coprime
+{
+    #include <stdio.h>
+main() {
+    int iscoprime(int a, int b) {
+        int t;
+        if (a<b) {
+            t = a;
+            a = b;
+            b = t; 
+        }
+        while (!(b == 0)) {
+            t = b;
+            b = a%b;
+            a = t;
+        }
+        if (a == 1) {
+            return 1;
+        }else {
+            return 0;
+        }
+    }
+
+    int prev, curr;
+    int i, n;
+    int count = 0;
+    scanf("%d", &n);
+    scanf ("%d", &prev);
+    for (i=1; i<n; i++) {
+        scanf("%d", &curr);
+        count = count + iscoprime(prev,curr);
+        prev = curr;
+    } printf("%d", count);
+}
+}
+
+
+// Evaluate the postfix expression using stack
+int evaluatePostfixExpression(char* postfix) {
+  // Create a stack to store operands
+  Stack* stack = createStack();
+
+  // Iterate over the postfix expression
+  for (int i = 0; postfix[i] != '\0'; i++) {
+    char operand = postfix[i];
+
+    // If the stack is empty, the postfix expression is invalid
+    if (isEmpty(stack)) {
+      return ERROR;
+    }
+
+    // If the operand is a number, push it onto the stack
+    if (isdigit(operand)) {
+      push(stack, operand - '0');
+    }
+
+    // If the operand is an operator, pop the top two operands from the stack,
+    // perform the operation, and push the result back onto the stack
+    else if (isOperator(operand)) {
+      int operand2 = pop(stack);
+      int operand1 = pop(stack);
+
+      // If the operator is invalid, return an error value
+      int result = performOperation(operand, operand1, operand2);
+      if (result == ERROR) {
+        return ERROR;
+      }
+
+      push(stack, result);
+    }
+  }
+
+  // If there is more than one operand on the stack, the postfix expression is invalid
+  if (stack->size > 1) {
+    return ERROR;
+  }
+
+  // The final operand on the stack is the result of the expression
+  return pop(stack);
+}
+
+// Perform an operation on two operands
+int performOperation(char operator, int operand1, int operand2) {
+  switch (operator) {
+    case '+':
+      return operand1 + operand2;
+    case '-':
+      return operand1 - operand2;
+    case '*':
+      return operand1 * operand2;
+    case '/':
+      return operand1 / operand2;
+    default:
+      // Invalid operator
+      return ERROR;
+  }
+}
