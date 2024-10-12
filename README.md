@@ -136,10 +136,6 @@ Contributions are highly encouraged! Feel free to:
    ```
 5. Create a Pull Request explaining your changes.
 
-## License
-
-This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
-
 ## Contact
 
 If you have any questions, suggestions, or issues, feel free to reach out.
