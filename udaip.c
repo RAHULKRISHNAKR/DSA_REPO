@@ -1,6 +1,4 @@
-// Emmanuel Jojy
-// S3 CSE A
-// Roll no: 53
+
 
 // Prg 27_0601
 // Graph Traversal
