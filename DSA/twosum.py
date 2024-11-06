@@ -5,14 +5,10 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        if not nums:
-            return -1
-
-        for i in range(0,len(nums)):
-            for j in range(0,len(nums)):
-                if i!=j:
-                    if nums[i]+nums[j]==target:
-                        return [i,j]
-                        break
-        return -1
-         
+        num_to_index = {}
+        for i, num in enumerate(nums):
+            complement = target - num
+            if complement in num_to_index:
+                return [num_to_index[complement], i]
+            num_to_index[num] = i
+        return []
